@@ -1,11 +1,12 @@
 import React from 'react';
-import Calendar from './calendar.jsx'
+import Calendar from './calendar.jsx';
+import Views from './views.jsx'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            current: null
+            hotel: null
         }
     }
 
@@ -21,9 +22,10 @@ class App extends React.Component {
 
     render () {
         return (
-            <div id="main" style={{textAlign: "center", margin: "auto"}}>
-                <h1>Calendar</h1>
-                <Calendar />
+            <div id="main">
+              <Views />
+              <h1>Calendar</h1>
+              <Calendar />
             </div>
         );
     }

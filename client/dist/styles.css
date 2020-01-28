@@ -1,0 +1,12 @@
+#main {
+    text-align: center;
+    margin: auto;
+    display: grid;
+    width: 400px;
+    grid-template: 18% 18% 18% 32% 18% / 50% 50%;
+}
+
+#views {
+    grid-column: 1 / 2;
+}
+

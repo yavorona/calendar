@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 app.get('/hotels', (req, res) => {
     return db.getLocations()
       .then((locations) => {
-          console.log(locations);
           res.send(locations);
       })
 })

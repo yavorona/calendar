@@ -11,7 +11,7 @@ class Calendar extends React.Component {
 
     render () {
         return (
-            <div>
+            <div id="main">
             </div>
         )
     }
