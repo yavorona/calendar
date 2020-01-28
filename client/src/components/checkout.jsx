@@ -1,9 +1,9 @@
 import React from 'react';
 
 const CheckOut = (props) => (
-    <div id="checkout">
-        <h3>This is the checkout mod</h3>
-    </div>
+    <button id="checkout">
+        This is the checkout mod
+    </button>
 )
 
 export default CheckOut;

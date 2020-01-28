@@ -31,6 +31,15 @@ class App extends React.Component {
                 </div>
                 <CheckIn />
                 <CheckOut />
+                <button id="guests">
+                    Guests
+                </button>
+                <div id="price">
+                  <h3>This is the Price</h3>
+                </div>
+                <button id="viewdeal">
+                  View Deal
+                </button>
               </div>
             </div>
         );
