@@ -2,7 +2,7 @@ import React from 'react';
 
 const CheckOut = (props) => (
     <div id="checkout">
-      <button>
+      <button id="checkoutbutton">
         This is the checkout mod
       </button>
     </div>

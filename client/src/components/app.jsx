@@ -32,13 +32,13 @@ class App extends React.Component {
               <h1>Calendar Widget</h1>
               <div id="main">
                 <div id="views">
-                  <h3>{this.state.current.views} are viewing this hotel</h3>
+                  <h3>{this.state.current.views} people are viewing this hotel</h3>
                 </div>
                 <CheckIn />
                 <CheckOut />
                 <Guests />
                 <div id="price">
-                  <h3>This is the Price</h3>
+                  Lock in this low price now!<span id="pricevalue">&nbsp;${this.state.current.price}</span>
                 </div>
                 <div id="viewdeal"> 
                   <button id="viewdealbutton">
