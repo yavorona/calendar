@@ -11,10 +11,10 @@ class Calendar extends React.Component {
     render () {
         return (
             <div id="calendar">
-              <h3>This is a test</h3>
-              <h3>This is a test</h3>
-              <h3>This is a test</h3>
-              <h3>This is a test</h3>
+              <div id="selectdate">Select a date to continue</div> 
+              <div id="firstmonth">First Month</div>
+              <div id="secondmonth">Second Month</div>
+              <div id="averagerates">Average daily rates</div>
             </div>
         )
     }
