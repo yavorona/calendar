@@ -8,10 +8,13 @@ class Calendar extends React.Component {
         }
     }
 
-
     render () {
         return (
-            <div>
+            <div id="calendar">
+              <h3>This is a test</h3>
+              <h3>This is a test</h3>
+              <h3>This is a test</h3>
+              <h3>This is a test</h3>
             </div>
         )
     }
