@@ -1,13 +1,15 @@
 import React from 'react';
 import Calendar from './calendar.jsx';
-import CheckIn from './checkin.jsx'
-import CheckOut from './checkout.jsx'
+import CheckIn from './checkin.jsx';
+import CheckOut from './checkout.jsx';
+import Guests from './guests.jsx';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hotel: null
+            hotels: {},
+            current: {}
         }
     }
 
@@ -17,7 +19,10 @@ class App extends React.Component {
               return response.json()
           })
           .then((jsonResponse) => {
-              console.log(jsonResponse);
+              this.setState({
+                  hotels: jsonResponse,
+                  current: jsonResponse[0]
+              })
           })
     }
 
@@ -27,19 +32,19 @@ class App extends React.Component {
               <h1>Calendar Widget</h1>
               <div id="main">
                 <div id="views">
-                  <h3>This is the views section</h3>
+                  <h3>{this.state.current.views} are viewing this hotel</h3>
                 </div>
                 <CheckIn />
                 <CheckOut />
-                <button id="guests">
-                    Guests
-                </button>
+                <Guests />
                 <div id="price">
                   <h3>This is the Price</h3>
                 </div>
-                <button id="viewdeal">
-                  View Deal
-                </button>
+                <div id="viewdeal"> 
+                  <button id="viewdealbutton">
+                    View Deal
+                  </button>
+                </div>
               </div>
             </div>
         );

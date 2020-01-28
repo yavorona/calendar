@@ -1,9 +1,11 @@
 import React from 'react';
 
 const CheckIn = (props) => (
-    <button id="checkin">
+    <div id="checkin">
+      <button>
         This is the checkin mod
-    </button>
+      </button>
+    </div>
 )
 
 export default CheckIn;
