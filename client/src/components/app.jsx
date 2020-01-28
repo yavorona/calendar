@@ -36,7 +36,7 @@ class App extends React.Component {
 
     displayGuestsMod () {
         this.setState({
-            guestModToggled: true
+            guestModToggled: !this.state.guestModToggled
         })
     }
 
