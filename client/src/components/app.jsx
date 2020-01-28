@@ -9,6 +9,16 @@ class App extends React.Component {
         }
     }
 
+    componentDidMount() {
+        fetch('/hotels')
+          .then((response) => {
+              return response.json()
+          })
+          .then((jsonResponse) => {
+              console.log(jsonResponse);
+          })
+    }
+
     render () {
         return (
             <div id="main" style={{textAlign: "center", margin: "auto"}}>
