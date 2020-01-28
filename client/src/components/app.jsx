@@ -10,7 +10,8 @@ class App extends React.Component {
         this.state = {
             hotels: {},
             current: {},
-            calendarToggled: false
+            calendarToggled: false,
+            guestModToggled: false
         }
     }
 
@@ -33,6 +34,12 @@ class App extends React.Component {
         })
     }
 
+    displayGuestsMod () {
+        this.setState({
+            guestModToggled: true
+        })
+    }
+
     render () {
         return (
             <div id="widget">
@@ -45,6 +52,9 @@ class App extends React.Component {
                 <Guests />
                 <div id="price">
                   Lock in this low price now!&nbsp;<span id="pricevalue">${this.state.current.price}</span>
+                </div>
+                <div id="cancellation">
+                  <img id= "check" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ811szpbF26wqbIcFDtYyrmlAeXAvdkBpveIuzjc59QMcAvDFL&s"></img>Free cancellation for {this.state.current.daysToCancel} days
                 </div>
                 <div id="viewdeal"> 
                   <button id="viewdealbutton">
