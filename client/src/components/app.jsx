@@ -9,7 +9,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             hotels: {},
-            current: {}
+            current: {},
+            calendarToggled: false
         }
     }
 
@@ -26,25 +27,33 @@ class App extends React.Component {
           })
     }
 
+    displayCalendar () {
+        this.setState({
+            calendarToggled: !this.state.calendarToggled
+        })
+    }
+
     render () {
         return (
             <div id="widget">
-              <h1>Calendar Widget</h1>
               <div id="main">
                 <div id="views">
                   <h3>{this.state.current.views} people are viewing this hotel</h3>
                 </div>
-                <CheckIn />
-                <CheckOut />
+                <CheckIn toggleCalendar={this.displayCalendar.bind(this)}/>
+                <CheckOut toggleCalendar={this.displayCalendar.bind(this)}/>
                 <Guests />
                 <div id="price">
-                  Lock in this low price now!<span id="pricevalue">&nbsp;${this.state.current.price}</span>
+                  Lock in this low price now!&nbsp;<span id="pricevalue">${this.state.current.price}</span>
                 </div>
                 <div id="viewdeal"> 
                   <button id="viewdealbutton">
                     View Deal
                   </button>
                 </div>
+              </div>
+              <div id="calendarview">
+                {this.state.calendarToggled ? <Calendar /> : <span></span>}
               </div>
             </div>
         );

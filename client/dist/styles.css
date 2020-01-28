@@ -6,15 +6,29 @@ h1 {
     text-align: center;
 }
 
+#widget {
+    display: flex;
+}
+
 #main {
+    order: 0;
     text-align: center;
-    margin: auto;
+    margin-left: 20%;
     display: grid;
     width: 400px;
     height: 350px;
     grid-template: 15% 20% 20% 20% 20% / 50% 50%;
     border: solid 1px rgb(189, 189, 189);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#calendarview {
+    order: 1;
+    width: 300px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-left: 15px;
 }
 
 #views {
@@ -50,17 +64,27 @@ h1 {
     grid-row: 5 / 5;
 }
 
+#calendar {
+    border: solid 1px grey;
+    height: 200px;
+    width: 300px;
+    padding-left: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 button {
     height: 50px;
     width: 150px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: whitesmoke;
     font-size: 13px;
+    font-weight: 500;
+    border-radius: 2px;
 }
 
 #guestsbutton {
     width: 350px;
-    height: 40px;
+    height: 43px;
 }
 
 #viewdealbutton {
@@ -84,6 +108,15 @@ button:hover {
 #pricevalue {
     font-size: 22px;
     font-weight: 700;
+}
+
+#pricevalue:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#viewdealbutton:hover {
+    background-color: #e4a000;
 }
 
 #checkoutbutton {
