@@ -1,6 +1,7 @@
 import React from 'react';
 import Calendar from './calendar.jsx';
-import Views from './views.jsx'
+import CheckIn from './checkin.jsx'
+import CheckOut from './checkout.jsx'
 
 class App extends React.Component {
     constructor(props) {
@@ -22,10 +23,15 @@ class App extends React.Component {
 
     render () {
         return (
-            <div id="main">
-              <Views />
-              <h1>Calendar</h1>
-              <Calendar />
+            <div id="widget">
+              <h1>Calendar Widget</h1>
+              <div id="main">
+                <div id="views">
+                  <h3>This is the views section</h3>
+                </div>
+                <CheckIn />
+                <CheckOut />
+              </div>
             </div>
         );
     }
