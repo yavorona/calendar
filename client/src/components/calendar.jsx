@@ -50,6 +50,7 @@ class Calendar extends React.Component {
                     firstDay={this.renderFirstDay(this.state.current)} 
                     days={this.getDaysInMonth(this.state.current)}
                     previousMonth={this.previousMonth}
+                    changeDate={this.props.changeDate}
                 />
               <Month
                     id="secondmonth"
@@ -57,6 +58,7 @@ class Calendar extends React.Component {
                     firstDay={this.renderFirstDay(this.state.current + 1)} 
                     days={this.getDaysInMonth(this.state.current + 1)}
                     advanceMonth={this.advanceMonth}
+                    changeDate={this.props.changeDate}
                 />
               <div id="averagerates">Average daily rates</div>
             </div>
