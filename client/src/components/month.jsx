@@ -48,8 +48,14 @@ class Month extends React.Component {
         return (
           <div id={this.props.id}>
             <div id="monthname">{this.props.name} 2020</div>
-            <div id="weekdaynames">{moment.weekdaysShort().join(' ').toUpperCase()}</div>
-            <table cellSpacing="15">
+            <table cellSpacing="7">
+              <thead id="weekdaynames">
+                <tr>
+                  {moment.weekdaysShort().map((name, i) => (
+                      <td key={i}>{name.toUpperCase()}</td>
+                  ))}
+                </tr>
+              </thead>
               <tbody>
                 {daysToAdd}
               </tbody>
