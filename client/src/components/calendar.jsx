@@ -10,6 +10,8 @@ class Calendar extends React.Component {
             first: moment.months()[moment().month()],
             second: moment.months()[(moment().month()) + 1]
         }
+        this.advanceMonth = this.advanceMonth.bind(this);
+        this.previousMonth = this.previousMonth.bind(this);
     }
 
     renderFirstDay (month) {
@@ -29,12 +31,33 @@ class Calendar extends React.Component {
         })
     }
 
+    previousMonth () {
+        const newMonth = this.state.current - 1;
+        this.setState({
+            current: newMonth,
+            first: moment.months()[newMonth],
+            second: moment.months()[newMonth + 1]
+        })
+    }
+
     render () {
         return (
             <div id="calendar">
               <div id="selectdate">Select a date to continue</div> 
-              <Month id="firstmonth" name={this.state.first} firstDay={this.renderFirstDay(this.state.current)} days={this.getDaysInMonth(this.state.current)}/>
-              <Month id="secondmonth" name={this.state.second} firstDay={this.renderFirstDay(this.state.current + 1)} days={this.getDaysInMonth(this.state.current + 1)}/>
+              <Month
+                    id="firstmonth"
+                    name={this.state.first} 
+                    firstDay={this.renderFirstDay(this.state.current)} 
+                    days={this.getDaysInMonth(this.state.current)}
+                    previousMonth={this.previousMonth}
+                />
+              <Month
+                    id="secondmonth"
+                    name={this.state.second} 
+                    firstDay={this.renderFirstDay(this.state.current + 1)} 
+                    days={this.getDaysInMonth(this.state.current + 1)}
+                    advanceMonth={this.advanceMonth}
+                />
               <div id="averagerates">Average daily rates</div>
             </div>
         )

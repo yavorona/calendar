@@ -47,7 +47,11 @@ class Month extends React.Component {
         const daysToAdd = this.getDaysFormatted();
         return (
           <div id={this.props.id}>
-            <div id="monthname">{this.props.name} 2020</div>
+            <div id="monthdetails"> 
+              {this.props.previousMonth ? <button className="previous" onClick={() => this.props.previousMonth()}>{'<'}</button> : ''}
+              &nbsp;<div id="monthname">{this.props.name} 2020</div>&nbsp;
+              {!this.props.previousMonth ? <button className="next" onClick={() => this.props.advanceMonth()}>{'>'}</button> : ''}
+            </div>
             <table cellSpacing="7">
               <thead id="weekdaynames">
                 <tr>

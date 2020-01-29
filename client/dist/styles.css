@@ -184,9 +184,28 @@ button:hover {
 }
 
 #monthname {
-    font-size: 20px;;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.next, .previous {
+    display: inline-block;
+    background-color: whitesmoke;
+    height: 15px;
+    width: 30px;
+    font-weight: 500;
+    font-size: 5px;
+    border-radius: 2px;
+    padding-left: 10px;
+    box-shadow: none;
 }
 
 .day {
     padding: 5px 5px;
+}
+
+#monthdetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
