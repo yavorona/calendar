@@ -3,9 +3,9 @@ import moment from 'moment';
 
 const Day = (props) => (
     <td 
-      className="day" 
-      onClick={() => props.changeDate(props.day, moment.months().indexOf(props.name))}>
-      
+      className={props.check === 'In' ? "dayin day" : "dayout day"}
+      onClick={() => props.changeDate(props.day, moment.months().indexOf(props.name))}
+      >
       {props.day}
     </td>
 )

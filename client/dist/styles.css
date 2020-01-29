@@ -142,9 +142,15 @@ button:hover {
     background-color: #e4a000;
 }
 
-.day:hover {
+.dayin:hover {
     cursor: pointer;
-    background-color: red;
+    background-color: #00a680;
+    color: white;
+}
+
+.dayout:hover {
+    cursor: pointer;
+    background-color: #d91e18;
     color: white;
 }
 

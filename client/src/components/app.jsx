@@ -35,11 +35,13 @@ class App extends React.Component {
     changeDate (day, month) {
         if (this.state.check === 'In') {
             this.setState({
-                inDate: moment().month(month).date(day).format('l')
+                inDate: moment().month(month).date(day).format('l'),
+                calendarToggled: false
             })
         } else {
             this.setState({
-                outDate: moment().month(month).date(day).format('l')
+                outDate: moment().month(month).date(day).format('l'),
+                calendarToggled: false
             })
         }
     }
@@ -80,7 +82,7 @@ class App extends React.Component {
                 </div>
               </div>
               <div id="calendarview">
-                {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)}/> : <span></span>}
+                {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check}/> : <span></span>}
               </div>
             </div>
         );
