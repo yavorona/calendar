@@ -49,13 +49,15 @@ class App extends React.Component {
     displayCalendar (input) {
         this.setState({
             check: input,
-            calendarToggled: !this.state.calendarToggled
+            calendarToggled: !this.state.calendarToggled,
+            guestModToggled: false
         })
     }
 
     displayGuestsMod () {
         this.setState({
-            guestModToggled: !this.state.guestModToggled
+            guestModToggled: !this.state.guestModToggled,
+            calendarToggled: false
         })
     }
 
@@ -68,7 +70,11 @@ class App extends React.Component {
                 </div>
                 <CheckIn toggleCalendar={this.displayCalendar.bind(this)} status={this.state.inDate}/>
                 <CheckOut toggleCalendar={this.displayCalendar.bind(this)} status={this.state.outDate}/>
-                <Guests />
+                <div id="guests">
+                    <button id="guestsbutton" onClick={() => this.displayGuestsMod()}>
+                        This is the guests mod
+                    </button>
+                </div>
                 <div id="price">
                   Lock in this low price now!&nbsp;<span id="pricevalue">${this.state.current.price}</span>
                 </div>
@@ -83,6 +89,7 @@ class App extends React.Component {
               </div>
               <div id="calendarview">
                 {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check}/> : <span></span>}
+                {this.state.guestModToggled ? <Guests /> : <span></span>}
               </div>
             </div>
         );
