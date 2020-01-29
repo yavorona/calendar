@@ -10,12 +10,11 @@ class Day extends React.Component {
 
     render () {
         return (
-            <td>
-              SQ
+            <td className="day">
+              {this.props.day}
             </td>
         )
     }
 }
-
 
 export default Day;

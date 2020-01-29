@@ -13,7 +13,7 @@ class Calendar extends React.Component {
     }
 
     renderFirstDay (month) {
-        return moment().month(month).date(1);
+        return moment().month(month).date(1).format("d");
     }
 
     getDaysInMonth (month) {
