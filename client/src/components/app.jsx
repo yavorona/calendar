@@ -3,11 +3,15 @@ import Calendar from './calendar.jsx';
 import CheckIn from './checkin.jsx';
 import CheckOut from './checkout.jsx';
 import Guests from './guests.jsx';
+import moment from 'moment';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            check: null,
+            inDate: moment().format('l'),
+            outDate: moment().add(5, 'days').format('l'),
             hotels: {},
             current: {},
             calendarToggled: false,
@@ -28,8 +32,9 @@ class App extends React.Component {
           })
     }
 
-    displayCalendar () {
+    displayCalendar (input) {
         this.setState({
+            check: input,
             calendarToggled: !this.state.calendarToggled
         })
     }
@@ -47,8 +52,8 @@ class App extends React.Component {
                 <div id="views">
                   <h3>{this.state.current.views} people are viewing this hotel</h3>
                 </div>
-                <CheckIn toggleCalendar={this.displayCalendar.bind(this)}/>
-                <CheckOut toggleCalendar={this.displayCalendar.bind(this)}/>
+                <CheckIn toggleCalendar={this.displayCalendar.bind(this)} status={this.state.inDate}/>
+                <CheckOut toggleCalendar={this.displayCalendar.bind(this)} status={this.state.outDate}/>
                 <Guests />
                 <div id="price">
                   Lock in this low price now!&nbsp;<span id="pricevalue">${this.state.current.price}</span>
