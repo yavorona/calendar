@@ -57,6 +57,7 @@ class Month extends React.Component {
               &nbsp;&nbsp;<div id="monthname">{this.props.name} 2020</div>&nbsp;&nbsp;
               {!this.props.previousMonth ? <button className="next" onClick={() => this.props.advanceMonth()}>{'>'}</button> : ''}
             </div>
+            <br/>
             <table cellSpacing="7">
               <thead id="weekdaynames">
                 <tr>

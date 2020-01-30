@@ -25,7 +25,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/hotels')
+        fetch('/hotels' + location.pathname)
           .then((response) => {
               return response.json()
           })
