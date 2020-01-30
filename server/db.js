@@ -15,9 +15,9 @@ let hotelSchema = {
 
 let Hotel = mongoose.model('Hotel', hotelSchema);
 
-const getLocations = () => {
+const getLocations = (location) => {
     return new Promise((resolve, reject) => {
-        Hotel.find({}, (err, locations) => {
+        Hotel.find(location, (err, locations) => {
             if (err) {
                 reject(err);
             } else {

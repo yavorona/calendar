@@ -17,6 +17,13 @@ app.get('/hotels', (req, res) => {
       })
 })
 
+app.get('/hotels/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+    return db.getLocations({id: id})
+      .then((location) => {
+          res.send(location);
+      })
+})
 
 app.listen(1128, () => {
     console.log('Listening on Chickin App');
