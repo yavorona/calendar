@@ -181,6 +181,21 @@ button {
     width: 300px;
 }
 
+.increment, .decrement {
+    height: 36px;
+    width: 36px;
+    color: #00a680;
+    font-size: 30px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.roomsmodvalue {
+    height: 36px;
+    width: 50px;
+    box-shadow: inset 0 4px 3px -3px rgba(0,0,0,.25), inset 0 -4px 3px -3px rgba(0,0,0,.25);
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -206,7 +221,7 @@ button:hover {
     color: white;
 }
 
-#price, #checkin, #checkout, #guests, #viewdeal, #selectdate, #roomstitle, #roomsbuttoncontainer, #adultstitle, #adultsbuttoncontainer, #childrentitle, #childrenbuttoncontainer, #updatebuttoncontainer {
+#price, #checkin, #checkout, #guests, #viewdeal, #selectdate, #roomstitle, #roomsbuttoncontainer, #adultstitle, #adultsbuttoncontainer, #childrentitle, #childrenbuttoncontainer, #updatebuttoncontainer, #roomsmodtext, .roomsmodvalue {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,6 +304,17 @@ button:hover {
     margin-right: 5px;
     margin-bottom: -5px;
     display: inline-block;
+}
+
+.guestsmodimage {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: 4px;
+}
+
+#adultsmodimage {
+    margin-right: 10px;
 }
 
 .calendarWords, #guestswords, #viewsheader {

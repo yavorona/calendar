@@ -16,7 +16,11 @@ class App extends React.Component {
             current: {},
             calendarToggled: false,
             guestModToggled: false,
-            guests: '1 room, 2 adults, 0 children'
+            guests: {
+                rooms: 1,
+                adults: 2,
+                children: 0
+            }
         }
     }
 
@@ -62,7 +66,15 @@ class App extends React.Component {
         })
     }
 
+    updateGuests (update) {
+        this.setState({
+            guests: update,
+            guestModToggled: false
+        })
+    }
+
     render () {
+        const guests = this.state.guests;
         return (
             <div id="widget">
               <div id="main">
@@ -76,7 +88,7 @@ class App extends React.Component {
                     <button id="guestsbutton" onClick={() => this.displayGuestsMod()}>
                         <img id="guestsimage" src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png"/>
                         <div id="guestswords">
-                          Guests<br/><span className="date">{this.state.guests}</span>
+                          Guests<br/><span className="date">{`${guests.rooms} rooms, ${guests.adults} adults, ${guests.children} children`}</span>
                         </div>
                     </button>
                 </div>
@@ -94,7 +106,7 @@ class App extends React.Component {
               </div>
               <div id="calendarview">
                 {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check}/> : <span></span>}
-                {this.state.guestModToggled ? <Guests /> : <span></span>}
+                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests}/> : <span></span>}
               </div>
             </div>
         );
