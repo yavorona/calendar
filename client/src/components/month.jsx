@@ -20,7 +20,12 @@ class Month extends React.Component {
         let daysInMonth = [];
         for (let j = 1; j < this.props.days; j++) {
             daysInMonth.push(
-                <Day key={j + this.props.firstDay} day={j}/>
+                <Day 
+                  key={j + this.props.firstDay} 
+                  day={j} changeDate={this.props.changeDate} 
+                  name={this.props.name}
+                  check={this.props.check}
+                  />
             )
         }
         const totalSlots = blanks.concat(daysInMonth);

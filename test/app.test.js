@@ -7,5 +7,5 @@ it('should render checkIn button with correct text', () => {
     const button = wrapper.find('button');
     const result = button.text();
 
-    expect(result).toBe('This is the checkin mod');
+    expect(result).toBe('Check In ');
 });
