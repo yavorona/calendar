@@ -1,20 +1,32 @@
 import React from 'react';
 
-const Guests = (props) => (
-    <div id="guestsmod">
-      <div id="rooms">
+class Guests extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      current: null
+    }
+  }
 
+  render () {
+    return (
+      <div id="guestsmod">
+        <div id="roomstitle">
+          Rooms
+        </div>
+        <button></button>
+        <div id="adults">
+          Adults
+        </div>
+        <div id="children">
+          Children
+        </div>
+        <div id="update">
+          <button>Update</button>
+        </div>
       </div>
-      <div id="adults">
-        
-      </div>
-      <div id="children">
-
-      </div>
-      <div id="update">
-
-      </div>
-    </div>
-)
+    )
+  }
+}
 
 export default Guests;
