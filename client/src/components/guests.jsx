@@ -14,15 +14,23 @@ class Guests extends React.Component {
         <div id="roomstitle">
           Rooms
         </div>
-        <button></button>
-        <div id="adults">
+        <div id="roomsbuttoncontainer">
+          <button id="roomsbutton"></button>
+        </div>
+        <div id="adultstitle">
           Adults
         </div>
-        <div id="children">
+        <div id="adultsbuttoncontainer">
+          <button id="adultsbutton"></button>
+        </div>
+        <div id="childrentitle">
           Children
         </div>
-        <div id="update">
-          <button>Update</button>
+        <div id="childrenbuttoncontainer">
+          <button id="childrenbutton"></button>
+        </div>
+        <div id="updatebuttoncontainer">
+          <button id="updatebutton">Update</button>
         </div>
       </div>
     )
