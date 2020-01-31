@@ -8,7 +8,7 @@ h3, #calendar, #guestsmod, #monthname  {
     font-size: 15px;
 }
 
-#price, #checkin, #checkout, #guests, #viewdeal, #selectdate, #roomstitle, #roomsbuttoncontainer, #adultstitle, #adultsbuttoncontainer, #childrentitle, #childrenbuttoncontainer, #updatebuttoncontainer, #roomsmodtext, .roomsmodvalue, #views {
+#price, #checkin, #checkout, #guests, #viewdeal, #roomstitle, #roomsbuttoncontainer, #adultstitle, #adultsbuttoncontainer, #childrentitle, #childrenbuttoncontainer, #updatebuttoncontainer, #roomsmodtext, .roomsmodvalue, #views {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,8 +30,8 @@ h3, #calendar, #guestsmod, #monthname  {
 
 #calendarview {
     order: 1;
-    width: 500px;
-    height: 350px;
+    width: 585px;
+    height: 400px;
     display: flex;
     justify-content: left;
     align-items: left;
@@ -237,16 +237,41 @@ button:hover {
     background-color: #e4a000;
 }
 
-.dayin:hover {
+.dayin#lowPrice:hover, .dayin:hover {
     cursor: pointer;
     background-color: #00a680;
     color: white;
 }
 
-.dayout:hover {
+.dayout#lowPrice:hover, .dayout:hover {
     cursor: pointer;
     background-color: #d91e18;
     color: white;
+}
+
+#lowPrice {
+    border-radius: 2px;
+    background-color: #fc0;
+}
+
+#lowestpriced {
+    font-size: 12px;
+    color: #4a4a4a;
+    margin-top: 4px;
+}
+
+#selectdate {
+    text-align: center;
+    padding: 10px 0 10px;
+}
+
+#legendDot {
+    background: #fc0;
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    margin-right: 5px;
 }
 
 #pricevalue {
@@ -261,7 +286,8 @@ button:hover {
 
 #weekdaynames {
     font-weight: 500;
-    font-size: 12px;;
+    font-size: 11px;
+    color: #2c2c2c;
 }
 
 #monthname {
@@ -270,24 +296,46 @@ button:hover {
 }
 
 .next, .previous {
-    height: 15px;
+    height: 30px;
     width: 30px;
     font-weight: 500;
-    font-size: 5px;
-    border-radius: 2px;
+    font-size: 20px;
     padding-left: 10px;
     box-shadow: none;
+    border: none;
+    color: rgb(168, 168, 168);
 }
 
-.day {
-    padding: 5px 5px;
-    color: rgba(0, 0, 0, 0.847);
+.previous {
+    margin-left: 10px;
+}
+
+.next {
+    margin-right: 10px;
 }
 
 #monthdetails {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    margin-bottom: -10px;
+}
+
+.monthtable {
+    margin-left: 10px;
+}
+
+thead {
+    padding-bottom: -10px;
+}
+
+.monthdetailpad {
+    width: 18px;
+}
+.day {
+    padding: 5px 5px;
+    color: #4b4b4b;
+    font-size: 14px;
 }
 
 .date {
