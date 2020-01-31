@@ -104,10 +104,10 @@ class App extends React.Component {
                 </div>
               </div>
               <div id="calendarview">
-                  <CSSTransition classNames="example" in={this.state.calendarToggled} timeout={600}>
+                  <CSSTransition classNames="example" in={this.state.calendarToggled} timeout={300}>
                     {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check} min={this.state.current.averageDailyRateMin} max={this.state.current.averageDailyRateMax}/> : <span></span> }
                   </CSSTransition> 
-                  <CSSTransition classNames="example" in={this.state.guestModToggled} timeout={600}>
+                  <CSSTransition classNames="example" in={this.state.guestModToggled} timeout={300}>
                     {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests} maxRooms={this.state.current.maxRooms}/> : <span></span>}
                   </CSSTransition> 
               </div>
