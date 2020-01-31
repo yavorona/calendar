@@ -325,13 +325,10 @@ button:hover {
     margin-left: 10px;
 }
 
-thead {
-    padding-bottom: -10px;
-}
-
 .monthdetailpad {
     width: 18px;
 }
+
 .day {
     padding: 5px 5px;
     color: #4b4b4b;
