@@ -15,7 +15,7 @@ for (let i = 0; i < 100; i++) {
         averageDailyRateMin: getRandomNumberInRange(25, 50),
         averageDailyRateMax: getRandomNumberInRange(51, 100),
         adultsPerRoom: getRandomNumberInRange(2, 5),
-        maxrooms: getRandomNumberInRange(3, 6),
+        maxRooms: getRandomNumberInRange(3, 6),
         price: getRandomNumberInRange(100, 200),
         daysToCancel: 10
     })

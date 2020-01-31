@@ -104,7 +104,7 @@ class App extends React.Component {
               </div>
               <div id="calendarview">
                 {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check} min={this.state.current.averageDailyRateMin} max={this.state.current.averageDailyRateMax}/> : <span></span>}
-                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests}/> : <span></span>}
+                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests} maxRooms={this.state.current.maxRooms}/> : <span></span>}
               </div>
             </div>
         );

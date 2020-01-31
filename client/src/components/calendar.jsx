@@ -62,7 +62,7 @@ class Calendar extends React.Component {
                     changeDate={this.props.changeDate}
                     check={this.props.check}
                 />
-              <div id="averagerates">Average daily rates ${this.props.min} - ${this.props.max}</div>
+              <div id="averagerates">Average daily rates: ${this.props.min} - ${this.props.max}</div>
             </div>
         )
     }
