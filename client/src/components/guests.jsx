@@ -19,6 +19,7 @@ class Guests extends React.Component {
       })
     } else {
       if (input === 'rooms' && this.state.guests.rooms >= this.props.maxRooms) {
+        alert('Max rooms reached');
         return;
       }
       const newState = this.state.guests;

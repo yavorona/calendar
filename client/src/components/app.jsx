@@ -4,6 +4,7 @@ import CheckIn from './checkin.jsx';
 import CheckOut from './checkout.jsx';
 import Guests from './guests.jsx';
 import moment from 'moment';
+import { CSSTransition } from 'react-transition-group';
 
 class App extends React.Component {
     constructor(props) {
@@ -103,8 +104,12 @@ class App extends React.Component {
                 </div>
               </div>
               <div id="calendarview">
-                {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check} min={this.state.current.averageDailyRateMin} max={this.state.current.averageDailyRateMax}/> : <span></span>}
-                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests} maxRooms={this.state.current.maxRooms}/> : <span></span>}
+                  <CSSTransition classNames="example" in={this.state.calendarToggled} timeout={600}>
+                    {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check} min={this.state.current.averageDailyRateMin} max={this.state.current.averageDailyRateMax}/> : <span></span> }
+                  </CSSTransition> 
+                  <CSSTransition classNames="example" in={this.state.guestModToggled} timeout={600}>
+                    {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests} maxRooms={this.state.current.maxRooms}/> : <span></span>}
+                  </CSSTransition> 
               </div>
             </div>
         );
