@@ -25,6 +25,7 @@ class Month extends React.Component {
                   day={j} changeDate={this.props.changeDate} 
                   name={this.props.name}
                   check={this.props.check}
+                  lowPrice={Math.ceil(Math.random() * 8)}
                   />
             )
         }
@@ -53,12 +54,12 @@ class Month extends React.Component {
         return (
           <div id={this.props.id}>
             <div id="monthdetails"> 
-              {this.props.previousMonth ? <button className="previous" onClick={() => this.props.previousMonth()}>{'<'}</button> : ''}
-              &nbsp;&nbsp;<div id="monthname">{this.props.name} 2020</div>&nbsp;&nbsp;
-              {!this.props.previousMonth ? <button className="next" onClick={() => this.props.advanceMonth()}>{'>'}</button> : ''}
+              {this.props.previousMonth ? <button className="previous" onClick={() => this.props.previousMonth()}>{'<'}</button> : <span className="monthdetailpad"></span>}
+              <div id="monthname">{this.props.name} 2020</div>
+              {!this.props.previousMonth ? <button className="next" onClick={() => this.props.advanceMonth()}>{'>'}</button> : <span className="monthdetailpad"></span>}
             </div>
             <br/>
-            <table cellSpacing="7">
+            <table className="monthtable" cellSpacing="11">
               <thead id="weekdaynames">
                 <tr>
                   {moment.weekdaysShort().map((name, i) => (

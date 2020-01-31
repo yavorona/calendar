@@ -43,7 +43,13 @@ class Calendar extends React.Component {
     render () {
         return (
             <div id="calendar">
-              <div id="selectdate">Select a date to continue</div> 
+              <div id="selectdate">
+                Select a date to continue
+                <div id="lowestpriced">
+                  <span id="legendDot"></span>
+                  Lowest priced dates
+                </div>
+              </div> 
               <Month
                     id="firstmonth"
                     name={this.state.first} 
@@ -62,7 +68,7 @@ class Calendar extends React.Component {
                     changeDate={this.props.changeDate}
                     check={this.props.check}
                 />
-              <div id="averagerates">Average daily rates</div>
+              <div id="averagerates">Average daily rates: ${this.props.min} - ${this.props.max}</div>
             </div>
         )
     }

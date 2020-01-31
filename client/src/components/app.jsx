@@ -12,7 +12,6 @@ class App extends React.Component {
             check: null,
             inDate: moment().format('l'),
             outDate: moment().add(5, 'days').format('l'),
-            hotels: {},
             current: {},
             calendarToggled: false,
             guestModToggled: false,
@@ -31,7 +30,6 @@ class App extends React.Component {
           })
           .then((jsonResponse) => {
               this.setState({
-                  hotels: jsonResponse,
                   current: jsonResponse[0]
               })
           })
@@ -105,8 +103,8 @@ class App extends React.Component {
                 </div>
               </div>
               <div id="calendarview">
-                {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check}/> : <span></span>}
-                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests}/> : <span></span>}
+                {this.state.calendarToggled ? <Calendar changeDate={this.changeDate.bind(this)} check={this.state.check} min={this.state.current.averageDailyRateMin} max={this.state.current.averageDailyRateMax}/> : <span></span>}
+                {this.state.guestModToggled ? <Guests update={this.updateGuests.bind(this)} guests={guests} maxRooms={this.state.current.maxRooms}/> : <span></span>}
               </div>
             </div>
         );
