@@ -4,6 +4,11 @@ body {
     background-color: #f2f2f2;
 }
 
+#topbanner {
+    position: absolute;
+    left: 100px;
+}
+
 h3, #calendar, #guestsmod, #monthname  {
     font-size: 15px;
 }
