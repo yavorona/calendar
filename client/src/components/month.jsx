@@ -23,6 +23,7 @@ class Month extends React.Component {
                 <Day 
                   key={j + this.props.firstDay} 
                   day={j} changeDate={this.props.changeDate} 
+                  month={this.props.month}
                   name={this.props.name}
                   check={this.props.check}
                   lowPrice={Math.ceil(Math.random() * 8)}
@@ -55,7 +56,7 @@ class Month extends React.Component {
           <div id={this.props.id}>
             <div id="monthdetails"> 
               {this.props.previousMonth ? <button className="previous" onClick={() => this.props.previousMonth()}>{'<'}</button> : <span className="monthdetailpad"></span>}
-              <div id="monthname">{this.props.name} 2020</div>
+              <div id="monthname">{this.props.name.format('MMMM')} {this.props.name.format('YYYY')}</div>
               {!this.props.previousMonth ? <button className="next" onClick={() => this.props.advanceMonth()}>{'>'}</button> : <span className="monthdetailpad"></span>}
             </div>
             <br/>

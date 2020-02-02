@@ -7,8 +7,8 @@ class Calendar extends React.Component {
         super(props);
         this.state = {
             current: moment().month(),
-            first: moment.months()[moment().month()],
-            second: moment.months()[(moment().month()) + 1]
+            first: moment(),
+            second: moment().add(1, 'months')
         }
         this.advanceMonth = this.advanceMonth.bind(this);
         this.previousMonth = this.previousMonth.bind(this);
@@ -26,17 +26,20 @@ class Calendar extends React.Component {
         const newMonth = this.state.current + 1;
         this.setState({
             current: newMonth,
-            first: moment.months()[newMonth],
-            second: moment.months()[newMonth + 1]
+            first: moment().month(newMonth),
+            second: moment().month(newMonth + 1)
         })
     }
 
     previousMonth () {
         const newMonth = this.state.current - 1;
+        if (moment().month(newMonth).isBefore(moment())) {
+            return;
+        }
         this.setState({
             current: newMonth,
-            first: moment.months()[newMonth],
-            second: moment.months()[newMonth + 1]
+            first: moment().month(newMonth),
+            second: moment().month(newMonth + 1)
         })
     }
 
@@ -52,6 +55,7 @@ class Calendar extends React.Component {
               </div> 
               <Month
                     id="firstmonth"
+                    month={this.state.current}
                     name={this.state.first} 
                     firstDay={this.renderFirstDay(this.state.current)} 
                     days={this.getDaysInMonth(this.state.current)}
@@ -61,6 +65,7 @@ class Calendar extends React.Component {
                 />
               <Month
                     id="secondmonth"
+                    month={this.state.current + 1}
                     name={this.state.second} 
                     firstDay={this.renderFirstDay(this.state.current + 1)} 
                     days={this.getDaysInMonth(this.state.current + 1)}
