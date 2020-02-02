@@ -44,7 +44,7 @@ h3, #calendar, #guestsmod, #monthname  {
     z-index: 2;
     order: 1;
     width: 585px;
-    height: 400px;
+    height: 420px;
     display: flex;
     justify-content: left;
     margin-left: 15px;
