@@ -18,7 +18,7 @@ class Month extends React.Component {
             )
         }
         let daysInMonth = [];
-        for (let j = 1; j < this.props.days; j++) {
+        for (let j = 1; j < this.props.days + 1; j++) {
             daysInMonth.push(
                 <Day 
                   key={j + this.props.firstDay} 
