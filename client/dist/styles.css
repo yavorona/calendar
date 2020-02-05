@@ -31,7 +31,8 @@ h3, #calendar, #guestsmod, #monthname  {
     top: 265px;
     display: grid;
     width: 400px;
-    height: 350px;
+    height: 400px;
+    margin-right: 10px;
     grid-template: 20% 15% 15% 20% 5% 25% / 50% 50%;
 }
 
