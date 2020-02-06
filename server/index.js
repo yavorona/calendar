@@ -3,6 +3,7 @@ const app = express();
 const parser = require('body-parser');
 const db = require('./db.js');
 
+app.use(express.static(__dirname + '/../client/dist'));
 app.use("/:id/", express.static(__dirname + '/../client/dist'));
 app.use(parser.urlencoded({extended: true}));
 
